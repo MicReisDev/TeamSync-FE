@@ -1,0 +1,18 @@
+.usersEditBtn {
+    background: transparent;
+    font-size: 15px;
+    padding: 0 25px;
+    border: 1px solid var(--cinza-secundario);
+    color: var(--cinza-secundario);
+    font-weight: bold;
+    border-radius: 50em;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.usersEditBtn:hover {
+    cursor: pointer;
+    background: var(--cinza-secundario);
+    color: var(--branco-zero);
+}

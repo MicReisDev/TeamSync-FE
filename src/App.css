@@ -1,0 +1,570 @@
+/* Imports */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'SF Pro';
+    src: url('../assets/fonts/SF-Pro.ttf') format('truetype');
+}
+
+/* CSS HEX */
+:root {
+    --preto-quintiario: #0d1321ff;
+    --quase-preto-sextiario: #1d2d44ff;
+    --cinza-teceario: #3e5c76ff;
+    --cinza-secundario: #748baaff;
+    --cinza-secundario-a: rgba(116, 139, 170, 0.637);
+    --cinza-secundario-b: rgba(116, 139, 170, 0.5);
+    --cinza-secundario-c: rgba(116, 139, 170, 0.103);
+    --azul-primario: #0069ffff;
+    ;
+    --branco-zero: #ffffff;
+    --azul-primario: linear-gradient(45deg, var(--preto-quintiario), var(#0069ffff; ));
+
+    /* CSS HSL */
+
+    --font: 'SF Pro', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0px;
+}
+
+ul,
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0px;
+    font-family: var(--font);
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+
+
+
+
+.button-prymary {
+    transition: 0.5s;
+    background: #0069ffff;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    color: var(--branco-zero);
+    padding: 1rem 2rem;
+    border: 1px solid #0069ffff;
+    border-radius: 50em;
+    font-size: 24px;
+    box-shadow: 0 0 0 0;
+    transform: perspective(1rem);
+}
+
+.button-prymary:hover {
+    transition: 0.5s;
+    background: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-weight: 400;
+    color: #0069ffff;
+    padding: 1rem 2rem;
+    border: 1px solid #0069ffff;
+    border-radius: 50em;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.secundary-button {
+    transition: 0.5s;
+    background: #0069ffff;
+    font-weight: bold;
+    color: var(--branco-zero);
+    padding: 1rem 2rem;
+    border: 1px solid #0069ffff;
+    border-radius: 50em;
+    font-size: 15px;
+    box-shadow: 0 0 0 0;
+    transform: perspective(1rem);
+}
+
+.secundary-button:hover {
+    transition: 0.5s;
+    background: white;
+    color: #0069ffff;
+    border: 1px solid #0069ffff;
+    cursor: pointer;
+}
+
+
+
+.hero-bg img {
+    width: 70vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+
+
+
+.login-logo {
+    width: 40%;
+    height: 60px;
+    align-self: center;
+}
+
+.animacaoEsquerda {
+    opacity: 0;
+    transform: translateX(-200px);
+    animation: animacaoEsquerda .5s forwards;
+}
+
+@keyframes animacaoEsquerda {
+    to {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
+.animacaoDireita {
+    opacity: 0;
+    transform: translateX(100px);
+    animation: animacaoDireita .5s forwards;
+}
+
+@keyframes animacaoDireita {
+    to {
+        opacity: 1;
+        transform: initial;
+    }
+}
+
+
+/* login */
+
+.login-container {
+    background-color: white;
+    border-radius: 50px 0 0 50px;
+    position: fixed;
+    right: 0;
+    gap: 20px;
+    min-width: 750px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.LoginTituo {
+    font-size: 48px;
+    display: block;
+}
+
+.telalogin {
+    display: grid;
+    grid-template-columns: 1fr 0.7fr;
+    align-items: center;
+}
+
+.teste {
+    width: 600px;
+
+}
+
+.alerterror {
+    color: rgb(100, 0, 0);
+    background-color: rgb(255, 225, 225);
+    padding: 10px 20px;
+    border-radius: 50em;
+    font-weight: bold;
+    position: absolute;
+    top: 25px;
+}
+
+
+
+
+
+
+/* sidebar */
+
+.principalContent {
+    display: flex;
+}
+
+.sidebar {
+    min-width: 250px;
+    background-color: var(--branco-zero);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #0069ffff;
+    padding: 20px;
+    transition: 0.2s ease-in-out;
+}
+
+.navSideBarFolders {
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 5px;
+
+}
+
+.navSideBarFolders::-webkit-scrollbar {
+    width: 5px;
+}
+
+.navSideBarFolders::-webkit-scrollbar-thumb {
+    background-color: var(--cinza-secundario-b);
+    border-radius: 50em;
+}
+
+/* Estilização da barra de rolagem apenas para a .sidebar */
+.sidebar::-webkit-scrollbar {
+    width: 0px;
+    /* Largura da barra de rolagem */
+}
+
+
+
+.rigth-bar {
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    background-color: var(--cinza-secundario-c);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+a.active {
+    background: #0069ffff;
+    ;
+    color: var(--branco-zero);
+    /* Cor do texto do botão quando destacado */
+    transition: 0.3s all;
+}
+
+
+a.active:hover {
+    background: #0069ffff;
+    ;
+    color: var(--branco-zero);
+    /* Cor do texto do botão quando destacado */
+    transition: 0.3s all;
+}
+
+
+
+.sidebar.fechada {
+    min-width: 0%;
+    transition: 0.3s ease-in-out;
+}
+
+.sidebar.fechada * {
+    display: none;
+}
+
+.toggleSideBar {
+    cursor: pointer;
+    padding: 4rem;
+    background-size: 5px;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    left: 220px;
+    top: 40%;
+    border-radius: 100em;
+    transition: 0.1s all;
+    opacity: 0;
+    z-index: 99;
+    transform: rotate(180deg);
+}
+
+.toggleSideBar img {
+    width: 20px;
+    height: 20px;
+
+}
+
+
+.toggleSideBar.fechar {
+    transform: rotate(0);
+    padding: 4rem 10px;
+    left: 0;
+    opacity: 1;
+}
+
+.toggleSideBar:hover {
+    opacity: 1;
+    transition: 0.5s all;
+}
+
+
+.sideBarInfos {
+    margin: 30px 0;
+    display: flex;
+    border: 1px solid var(--cinza-secundario-b);
+    border-radius: 20px 0 20px 0;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.sideBarInfos p {
+    padding-left: 10px;
+}
+
+
+.btn-logout {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    border-radius: 0 0 20px 0;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    border-left: 1px solid var(--cinza-secundario-b);
+    background-color: var(--cinza-secundario-c);
+    transition: 0.3s;
+}
+
+
+.btn-logout:hover {
+    background: #0069ffff;
+    color: var(--branco-zero);
+}
+
+.sideBarInfosUser img {
+    background-color: #0069ffff;
+    border-radius: 5em;
+    width: 30%;
+}
+
+.sideBarInfosUser {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+.navSideBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+
+/* conteudo da esquerda */
+.left-container {
+    background-color: var(--branco-zero);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    border-radius: 25px 0 25px 0;
+    overflow-y: auto;
+}
+
+.left-container::-webkit-scrollbar {
+    width: 10px;
+}
+
+.left-container::-webkit-scrollbar-thumb {
+    background: var(--cinza-secundario);
+    border-radius: 50em;
+}
+
+.left-container>ul {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+
+
+
+.left-content>img {
+    max-width: 50px;
+    max-height: 50px;
+    background-color: #0069ffff;
+    border-radius: 2em;
+}
+
+.left-content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+@keyframes entrada {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Estilo para os elementos que terão a animação de entrada */
+.entrada-item {
+    animation: entrada 0.5s ease-in-out;
+}
+
+
+.left-lista {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: var(--cinza-secundario-c);
+    border-radius: 1em;
+}
+
+
+/* usuario */
+.modalContent-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.modalButton {
+    background: #0069ffff;
+}
+
+
+
+.modalContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+/* tarefas */
+
+
+.none {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-right: 10px;
+    padding: 0 20px;
+    z-index: 50;
+}
+
+.none {
+    background-color: white;
+    filter: drop-shadow(0 5px 5px #f2f2f2);
+    border-radius: 25px 25px 0 0;
+    border-bottom: 2px solid #f2f2f2;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.label-general {
+    display: flex;
+    background-color: var(--cinza-secundario-c);
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.criar-tarefa {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+
+.criar-tarefa .modalButton {
+    width: 200px;
+    align-self: flex-end;
+}
+
+.olho:hover {
+    color: '#0054e6';
+    cursor: pointer;
+}
+
+/* carregando config */
+
+.TarefaLista {
+    display: flex;
+    padding: 1rem 2rem;
+    background-color: var(--cinza-secundario-c);
+    border-radius: 1em;
+    justify-content: space-between;
+}
+
+
+.scroll::-webkit-scrollbar {
+    width: 5px;
+}
+
+.scroll::-webkit-scrollbar-thumb {
+
+    background-color: var(--cinza-secundario-b);
+    border-radius: 50em;
+}
+
+
+
+
+@media (prefers-color-scheme: dark) {
+    .rigth-bar {
+        background-color: black;
+        object-fit: cover;
+        background-position: center center;
+    }
+
+    .welcome-banner {
+        background-image: url("../assets/bg-gradient-noise-blue-creative-circle.png");
+        object-fit: cover;
+        background-position: center center;
+    }
+}
